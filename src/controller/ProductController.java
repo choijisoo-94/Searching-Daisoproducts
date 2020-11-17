@@ -1,8 +1,8 @@
 package controller;
 
+import admin.view.EndView;
 import model.ProductModel;
 import model.domain.Product;
-import view.EndView;
 
 public class ProductController {
 	private static ProductModel pm = new ProductModel();

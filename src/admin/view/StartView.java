@@ -1,4 +1,4 @@
-package view;
+package admin.view;
 
 import controller.ProductController;
 
