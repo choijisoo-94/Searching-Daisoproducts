@@ -17,4 +17,18 @@ public class Product {
 	private int amount;
 	private String location;
 	private int price;
+	
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("[상품명] : ");
+		builder.append(name);
+		builder.append(", [재고] : ");
+		builder.append(amount);
+		builder.append(", [재고 위치] : ");
+		builder.append(location);
+		builder.append(", [가격] : ");
+		builder.append(price);
+		return builder.toString();
+	}
 }
