@@ -24,7 +24,7 @@ public class OptionController {
 			System.out.println("\n2. 하나의 상품 위치 및 가격 정보 검색 ");
 			Scanner product = new Scanner(System.in);
 			daisoproduct=product.nextLine();
-			controller.getProjectMessage(ProductModel.getProduct(daisoproduct));
+			controller.getProductMessage(ProductModel.getProduct(daisoproduct));
 			EndView.serviceView();
 //		}else if(reqNo == 3) {
 //			boolean result = pm.update("왕꿈틀이", 10, "A3-2");

@@ -1,12 +1,4 @@
-<<<<<<< HEAD
-/controller/
-/model/
-/view/
-=======
-/model/
 /admin/
 /controller/
 /customer/
->>>>>>> b6e33d250a70ccb64b96356373cf40977d6a4c97
-/META-INF/
-/step10_report/
+/model/
