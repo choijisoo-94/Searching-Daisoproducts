@@ -76,7 +76,11 @@ public class ProductController {
 	}
 	
 	public void getProductMessage(Product product) {
-		System.out.println(product);
+		if(product!=null) {
+			System.out.println(product);
+		}else {
+			view.FailView.failMessageView("해당 상품은 존재하지 않습니다");
+		}
 	}
 	
 	
