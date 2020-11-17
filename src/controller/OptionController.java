@@ -3,8 +3,10 @@ package controller;
 import java.util.Scanner;
 
 import customer.view.EndView;
+import lombok.extern.slf4j.Slf4j;
 import model.ProductModel;
 
+@Slf4j
 public class OptionController {
 	
 	static String daisoproduct="";
@@ -25,32 +27,9 @@ public class OptionController {
 			Scanner product = new Scanner(System.in);
 			daisoproduct=product.nextLine();
 			controller.getProductMessage(ProductModel.getProduct(daisoproduct));
+			log.info("고객님께서 " + daisoproduct +"을 검색하셨습니다.(검색기록 저장)");
 			EndView.serviceView();
-//		}else if(reqNo == 3) {
-//			boolean result = pm.update("왕꿈틀이", 10, "A3-2");
-//			if(result == true) {
-//				EndView.validateReq("상품 재고 수정 완료");
-//			}else {
-//				EndView.validateReq("취급하지 않는 상품 수정 불가");
-//			}
-//		}else if(reqNo == 4) {
-//			int result = pm.delete("왕꿈틀이");
-//			if(result == 1) {
-//				EndView.validateReq("상품 삭제 완료");
-//			}else {
-//				EndView.validateReq("삭제하려는 상품 정보가 없습니다.");
-//			}
-//		}else if (reqNo == 5) {
-//			try {
-//				pm.insert(new Product("Pocky", 16, "A3 - 1", 1500));
-//				EndView.validateReq("상품 등록 완료");
-//			}catch (Exception e) {
-//				e.printStackTrace();
-//				EndView.invalidateReq("이미 등록된 상품입니다. 다시 시도하세요.");
-//			}
-//		}else {
-//			EndView.invalidateReq("요청에 부합되는 서비스가 없습니다.");
-//		}
-	}
+
+		}
 	}
 }
