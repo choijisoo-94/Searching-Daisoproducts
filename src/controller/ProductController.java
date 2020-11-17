@@ -3,6 +3,7 @@ package controller;
 import model.ProductModel;
 import model.domain.Product;
 import view.EndView;
+import view.FailView;
 
 public class ProductController {
 	private static ProductModel pm = new ProductModel();
@@ -37,10 +38,10 @@ public class ProductController {
 				EndView.validateReq("상품 등록 완료");
 			}catch (Exception e) {
 				e.printStackTrace();
-				EndView.invalidateReq("이미 등록된 상품입니다. 다시 시도하세요.");
+				FailView.failMessageView(e.getMessage());
 			}
 		}else {
-			EndView.invalidateReq("요청에 부합되는 서비스가 없습니다.");
+			EndView.invalidateReq("새로 저장하고자 하는 상품의 입력 정보가 이미 존재합니다. 확인해 주세요.");
 		}
 	}
 }
