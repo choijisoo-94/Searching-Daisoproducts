@@ -1,47 +1,79 @@
 package controller;
 
+import java.util.ArrayList;
+
+import admin.view.EndView;
 import model.ProductModel;
 import model.domain.Product;
-import view.EndView;
+
 import view.FailView;
+
 
 public class ProductController {
 	private static ProductModel pm = new ProductModel();
 	
-	public static void reqProcess(int reqNo) {
-		if(reqNo == 1) {
-			EndView.viewProdAll(pm.getProducts());
-		}else if(reqNo == 2) {
-			Product prod = pm.getProduct("일회용 마스크");
-			if(prod != null) {
-				EndView.viewProd(prod);
-			}else {
-				EndView.validateReq("해당 상품은 미 존재합니다.");
-			}
-		}else if(reqNo == 3) {
-			boolean result = pm.update("왕꿈틀이", 10, "A3-2");
-			if(result == true) {
-				EndView.validateReq("상품 재고 수정 완료");
-			}else {
-				EndView.validateReq("취급하지 않는 상품 수정 불가");
-			}
-		}else if(reqNo == 4) {
-			int result = pm.delete("왕꿈틀이");
-			if(result == 1) {
-				EndView.validateReq("상품 삭제 완료");
-			}else {
-				EndView.validateReq("삭제하려는 상품 정보가 없습니다.");
-			}
-		}else if (reqNo == 5) {
+	public static void getProductList() {
+		ArrayList<Product> productList = pm.getProducts();
+		
+		if(productList.size() != 0) {
+			EndView.viewProdAll(productList);
+		}else {
+			EndView.invalidateReq("어떠한 상품도 존재하지 않습니다.");
+		}
+	}
+	public static void getProduct(String name) {
+		if(name != null) {
+			Product product = pm.getProduct(name);
+			EndView.viewProd(product);
+		}
+	}
+	public static void insertProductList(Product newProduct) {
+		if(newProduct != null) {
 			try {
-				pm.insert(new Product("Pocky", 16, "A3 - 1", 1500));
+				pm.productinsert(newProduct);
 				EndView.validateReq("상품 등록 완료");
 			}catch (Exception e) {
-				e.printStackTrace();
+				//e.printStackTrace();
 				FailView.failMessageView(e.getMessage());
 			}
 		}else {
-			EndView.invalidateReq("새로 저장하고자 하는 상품의 입력 정보가 이미 존재합니다. 확인해 주세요.");
+		EndView.invalidateReq("새로 저장하고자 하는 상품의 입력 정보가 이미 존재합니다. 재확인 해주세요." );
+	}
+	}
+	public static void updateProduct(String name, int amount) {
+		if(name != null && amount != 0) {
+			try {
+				pm.productupdate(name, amount);
+			}catch (Exception e) {
+				FailView.failMessageView(e.getMessage());
+			}
+		}else {
+			EndView.invalidateReq("수정하고자 하는 상품재고가 존재하지 않습니다. 재확인 해주세요.");
 		}
 	}
-}
+	public static void updateProduct2(String name, String location) {
+		if (name != null && location != null) {
+			EndView.validateReq("수정하고자 하는 상품 정보를 찾았습니다." );
+			try {
+				pm.productupdate2(name, location);
+			}catch (Exception e) {
+				FailView.failMessageView(e.getMessage());
+			}
+		}else {
+			EndView.invalidateReq("수정하고자 하는 상품이 현재 매장내에 위치하지 않습니다. 재확인 해주세요.");
+		}
+	}
+	public static void deletePruduct(String name) {
+		if(name != null) {
+			try {
+				pm.productdelete(name);
+				EndView.validateReq(name + "삭제 성공");
+			}catch (Exception e) {
+				FailView.failMessageView(e.getMessage());
+			}
+		}else {
+			EndView.invalidateReq("삭제를 시도하려는 상품이 존재하지 않습니다.");
+		}
+	}
+	
+	}
