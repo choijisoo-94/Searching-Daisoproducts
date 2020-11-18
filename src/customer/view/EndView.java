@@ -87,7 +87,11 @@ public class EndView {
 			System.out.println("정상 실행 : " + message);
 		}
 		public static void viewProd(Product prod) {
-			System.out.println("검색된 상품 정보 : " + prod);
+			if(prod == null) {
+				System.out.println("[남부터미널점 다이소 챗봇 ] : 해당 상품은 품절되었거나 없는 상품 입니다.");
+			}else {
+				System.out.println("검색된 상품 정보 : " + prod);
+			}
 		}
 		public static void viewProdAll(ArrayList<Product> all) {
 			System.out.println("모든 상품 정보");

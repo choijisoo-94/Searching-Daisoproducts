@@ -36,7 +36,7 @@ public class ProductModel {
 		Product product = getProduct(newName);
 
 		if (product == null) {
-			throw new Exception("상품이름을 업데이트 하고자 하는 상품이  존재하지 않습니다.");
+			throw new Exception("재고량 수정 불가 - 수정하고자 하는 상품명이  존재하지 않습니다. 재확인 해주세요.");
 		} else {
 			product.setName(newName);
 			product.setAmount(newAmount);
@@ -47,7 +47,7 @@ public class ProductModel {
 		Product product = getProduct(newName);
 
 		if (product == null) {
-			throw new Exception("상품이름을 업데이트 하고자 하는 상품이  존재하지 않습니다.");
+			throw new Exception("재고위치 수정 불가 - 수정하고자 하는 상품명이  존재하지 않습니다. 재확인 해주세요.");
 		} else {
 			product.setName(newName);
 			product.setLocation(newLocation);

@@ -17,7 +17,7 @@ public class FranchiseDataBase {
 		total.add(new Franchise("영동프라자점", "02-7124-3757", "드라이버", 3, "A3 - 1", 20000));
 		total.add(new Franchise("신논현역점", "02-767-3768", "낚시대", 2,"A3 - 3", 100000));
 		total.add(new Franchise("신사역점", "02-712-3253", "낚시대", 5,"B1 - 1", 100000));
-		total.add(new Franchise("남부터미널점", "02-763-3895", "본드", 4, "B1 - 2", 2000));
+		total.add(new Franchise("낙성대점", "02-763-3895", "본드", 4, "B1 - 2", 2000));
 		total.add(new Franchise("교대역점", "02-773-3478", "헤어드라이기", 2, "B1 - 3", 50000));
 		total.add(new Franchise("강남본점", "02-795-3374", "본드", 1,"B1 - 4", 2000));
 		total.add(new Franchise("롯데마트서초점", "02-752-3783", "헤어드라이기", 3,"B2 - 1", 50000));

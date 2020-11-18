@@ -53,7 +53,6 @@ public class ProductController {
 	}
 	public static void updateProduct2(String name, String location) {
 		if (name != null && location != null) {
-			EndView.validateReq("수정하고자 하는 상품 정보를 찾았습니다." );
 			try {
 				pm.productupdate2(name, location);
 			}catch (Exception e) {
@@ -67,7 +66,7 @@ public class ProductController {
 		if(name != null) {
 			try {
 				pm.productdelete(name);
-				EndView.validateReq(name + "삭제 성공");
+				EndView.validateReq(name + " 삭제 성공");
 			}catch (Exception e) {
 				FailView.failMessageView(e.getMessage());
 			}

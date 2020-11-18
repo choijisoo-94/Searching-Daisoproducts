@@ -48,6 +48,7 @@ public class OptionController {
 				Admin_EndView.adminServiceView();
 			}else {
 				view.FailView.failMessageView("접근 허용 불허 -관리자만 이용하실수 있습니다!");
+				EndView.serviceView();
 			}
 			
 		}else if(reqNo == 5) {
