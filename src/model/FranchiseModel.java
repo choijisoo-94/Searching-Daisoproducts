@@ -11,7 +11,7 @@ public class FranchiseModel {
 	public ArrayList<Franchise> getFranchises() {
 		return franchises;
 	}
-	
+
 	public Franchise selectFranchises(String productName) {
 		for(Franchise franchise : franchises) {
 			if(franchise.getName().equals(productName)) {

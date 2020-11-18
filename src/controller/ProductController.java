@@ -76,7 +76,6 @@ public class ProductController {
 	}
 	
 		public static void getProductMessage(Product product, String productName) {
-		
 		switch(productName) {
 			case "여행용 파우치":
 			case "드라이버":
@@ -86,6 +85,7 @@ public class ProductController {
 			case "면도기":
 				fcontroller.getFranchiseMessage(productName);
 				break;
+				
 			default:
 				EndView.productView(product);	
 		}

@@ -28,7 +28,7 @@ public class Franchise {
 		builder.append(franchisename);
 		builder.append(", [가맹점 번호] : ");
 		builder.append(franchisenumber);
-		builder.append(", [상품명] : ");
+		builder.append("[상품명] : ");
 		builder.append(name);
 		builder.append(", [재고] : ");
 		builder.append(amount);

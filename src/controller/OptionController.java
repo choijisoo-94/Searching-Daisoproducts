@@ -50,7 +50,6 @@ public class OptionController {
 				view.FailView.failMessageView("접근 허용 불허 -관리자만 이용하실수 있습니다!");
 				EndView.serviceView();
 			}
-			
 		}else if(reqNo == 5) {
 			EndView.messageView("로그아웃 되셨습니다. 남부터미널점 다이소를 이용해주셔서 감사합니다!^^");
 			log.info("고객님께서 로그아웃을 하셨습니다.(로그아웃기록 저장)");

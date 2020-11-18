@@ -46,6 +46,13 @@ public class EndView {
 				System.out.println("[가맹점명] : " + franchise.getFranchisename() + "    [가맹점 번호] : " + franchise.getFranchisenumber());
 			}
 		}
+		
+		// 특정 가맹점 출력
+		public static void selectFranchiseList(ArrayList<Franchise> allFranchisess) {
+			for (Franchise franchise : allFranchisess) {
+				System.out.println("[가맹점명] : " + franchise.getFranchisename() + "    [가맹점 번호] : " + franchise.getFranchisenumber()+ "    [상품명] : " + franchise.getName());
+			}
+		}
 
 		// 예외가 아닌 단순 메세지 출력
 		public static void messageView(String message) {
