@@ -10,6 +10,7 @@ import view.FailView;
 
 public class ProductController {
 	private static ProductModel pm = new ProductModel();
+	static FranchiseController fcontroller = new FranchiseController();
 	
 	public static void getProductList() {
 		ArrayList<Product> productList = pm.getProducts();
@@ -75,11 +76,19 @@ public class ProductController {
 		}
 	}
 	
-	public void getProductMessage(Product product) {
-		if(product!=null) {
-			System.out.println(product);
-		}else {
-			view.FailView.failMessageView("해당 상품은 존재하지 않습니다");
+		public static void getProductMessage(Product product, String productName) {
+		
+		switch(productName) {
+			case "여행용 파우치":
+			case "드라이버":
+			case "낚시대":
+			case "본드":
+			case "헤어드라이기":
+			case "면도기":
+				fcontroller.getFranchiseMessage(productName);
+				break;
+			default:
+				EndView.productView(product);	
 		}
 	}
 	
