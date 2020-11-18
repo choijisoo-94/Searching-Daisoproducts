@@ -3,7 +3,7 @@ package admin.view;
 import controller.ProductController;
 import model.domain.Product;
 
-public class StartView {
+public class Admin_StartView {
 
 	public static void main(String[] args) {
 		

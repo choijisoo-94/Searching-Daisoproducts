@@ -22,15 +22,6 @@ public class StartView {
 			// 다이소 채팅봇 서비스 
 			EndView.serviceView();
 		}
-	
-		
-		
-		
-		
-
-		
-		
-		
 	}
 }
 

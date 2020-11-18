@@ -3,8 +3,10 @@ package controller;
 import java.util.Scanner;
 
 import customer.view.EndView;
+import admin.view.Admin_EndView;
 import lombok.extern.slf4j.Slf4j;
 import model.ProductModel;
+import model.auth.AdminLogin;
 import model.auth.MemberLogin;
 
 @Slf4j
@@ -38,12 +40,15 @@ public class OptionController {
 			fcontroller.getFranchiseList();
 			EndView.serviceView();
 		}else if(reqNo == 4) {
-			if() {
-				
+			//1. 관리자인지 고객인지 검증도 해줘야함
+			//2. 다이소 채팅봇 서비스 (admin)
+			EndView.messageView("관리자이신가요? 고객님이신가요? 관리자이시면 다시 로그인해주세요.^^");
+			if(AdminLogin.loginDaiso()) {
+				EndView.messageView("관리자 채널 입니다. 상품을 관리하실 수 있어요");
+				Admin_EndView.adminServiceView();
 			}else {
-				
+				view.FailView.failMessageView("접근 허용 불허 -관리자만 이용하실수 있습니다!");
 			}
-			EndView.messageView("관리자 채널 입니다. 상품을 관리하실 수 있어요");
 			
 		}else if(reqNo == 5) {
 			EndView.messageView("로그아웃 되셨습니다. 남부터미널점 다이소를 이용해주셔서 감사합니다!^^");

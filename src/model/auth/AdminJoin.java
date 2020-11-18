@@ -6,23 +6,22 @@ import java.io.IOException;
 import java.util.Scanner;
 
 
-
-public class MemberJoin {
+public class AdminJoin {
 	static Scanner scan = new Scanner(System.in);
 
 	public static void main(String[] args) {
-		File file = new File("C:\\Users\\Playdata\\Desktop\\MemberDB.txt");
+		File file = new File("C:\\Users\\Playdata\\Desktop\\AdminDB.txt");
 		try {
 			FileWriter filewritter = new FileWriter(file, true);
 			if(file.isFile() && file.canWrite()) {
-				System.out.println("회원가입을 위해 ID와 PW를 입력하세요.");
+				System.out.println("직원(관리자)가입을 위해 ID와 PW를 입력하세요.");
 				System.out.print("ID : ");
 				filewritter.append(scan.nextLine());
 				filewritter.append("\t");
 				System.out.print("PW : ");
 				filewritter.append(scan.nextLine());
 				filewritter.append("\r");
-				System.out.println("회원으로 등록되셨습니다.");
+				System.out.println("정직원으로 등록되셨습니다.");
 			}
 			filewritter.close();
 		} catch (IOException e) {
