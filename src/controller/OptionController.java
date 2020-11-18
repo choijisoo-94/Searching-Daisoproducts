@@ -5,6 +5,7 @@ import java.util.Scanner;
 import customer.view.EndView;
 import lombok.extern.slf4j.Slf4j;
 import model.ProductModel;
+import model.auth.MemberLogin;
 
 @Slf4j
 public class OptionController {
@@ -36,6 +37,17 @@ public class OptionController {
 			System.out.println("모든 가맹점 검색");
 			fcontroller.getFranchiseList();
 			EndView.serviceView();
+		}else if(reqNo == 4) {
+			if() {
+				
+			}else {
+				
+			}
+			EndView.messageView("관리자 채널 입니다. 상품을 관리하실 수 있어요");
+			
+		}else if(reqNo == 5) {
+			EndView.messageView("로그아웃 되셨습니다. 남부터미널점 다이소를 이용해주셔서 감사합니다!^^");
+			log.info("고객님께서 로그아웃을 하셨습니다.(로그아웃기록 저장)");
 		}
 	}
 }

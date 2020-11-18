@@ -58,7 +58,8 @@ public class EndView {
 			System.out.println("1. 모든 상품 정보 검색");
 			System.out.println("2. 하나의 상품 위치 및 가격 정보 검색");
 			System.out.println("3. 상품 구매 가능한 매장 검색");
-			System.out.println("4. 로그아웃");
+			System.out.println("4. 관리자 채널");
+			System.out.println("5. 로그아웃");
 
 			System.out.print("번호 입력 : ");
 			Scanner option = new Scanner(System.in);
@@ -71,7 +72,8 @@ public class EndView {
 				 System.out.println("1. 모든 상품 정보 검색");
 				 System.out.println("2. 하나의 상품 위치 및 가격 정보 검색");
 				 System.out.println("3. 상품 구매 가능한 가맹점 검색");
-				 System.out.println("4. 로그아웃");
+				 System.out.println("4. 관리자 채널");
+				 System.out.println("5. 로그아웃");
 				 option = new Scanner(System.in);
 				 int optionNumber = option.nextInt();
 		         controller.reqProcess(optionNumber);
