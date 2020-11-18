@@ -91,7 +91,5 @@ public class ProductController {
 				EndView.productView(product);	
 		}
 	}
-	
-	
 	}
 
